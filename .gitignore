@@ -1,0 +1,32 @@
+# --- Data ---
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# --- Environment & Secrets ---
+.env
+venv/
+.venv/
+
+# --- Python Artifacts ---
+__pycache__/
+*.py[cod]
+*.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+
+# --- IDE specific ---
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+
+# --- Reports / temporary outputs ---
+*.log
