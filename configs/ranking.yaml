@@ -1,0 +1,23 @@
+# Candidate ranking configuration.
+
+ranking:
+  uncertainty_penalty_weight: 1.0
+  physics_penalty_weight: 1.0
+  exploration_bonus_weight: 0.25
+
+warning_flags:
+  high_uncertainty_threshold_zscore: 1.5
+  low_physics_score_threshold: 0.5
+  structural_review_score_threshold: 0.7
+
+recommendation_categories:
+  high_confidence_plausible: "high-confidence plausible oxide"
+  exploration_candidate: "high-uncertainty exploration candidate"
+  needs_structural_review: "needs structural review"
+  physically_suspicious: "physically suspicious / reject"
+  nickelate_relevant: "nickelate-relevant candidate"
+  out_of_distribution: "out-of-distribution candidate"
+
+outputs:
+  ranked_candidates_csv: "artifacts/predictions/ranked_candidates.csv"
+  ranking_report: "reports/candidate_ranking_report.md"

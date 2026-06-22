@@ -1,0 +1,19 @@
+# Data-ingestion configuration for Materials Project queries.
+
+materials_project:
+  api_key_env_var: "MP_API_KEY"
+
+query:
+  required_element: "O"
+  num_elements: 3
+
+filters:
+  strict_reduced_formula: "ABO3"
+  oxygen_symbol: "O"
+  oxygen_amount: 3
+  non_oxygen_amount: 1
+  required_num_elements: 3
+
+outputs:
+  raw_candidates_csv: "data/raw/abo3_candidates_raw.csv"
+  query_metadata_json: "data/raw/query_metadata.json"

@@ -1,0 +1,38 @@
+# Chemistry and descriptor configuration for parent ABO3 oxides.
+
+oxidation_states:
+  oxygen_oxidation_state: -2
+  required_total_cation_charge: 6
+  allow_positive_fallback_states: true
+
+ionic_radii:
+  preferred_A_coordination: 12
+  preferred_B_coordination: 6
+  preferred_O_coordination: 6
+  allow_average_shannon_fallback: true
+  allow_average_ionic_radius_fallback: true
+
+descriptor_filters:
+  tolerance_factor_min: 0.6
+  tolerance_factor_max: 1.4
+  octahedral_factor_min: 0.3
+  octahedral_factor_max: 1.0
+
+molecular_oxyanion_b_elements:
+  - B
+  - C
+  - N
+  - P
+  - S
+  - Se
+  - Te
+  - Cl
+  - Br
+  - I
+
+outputs:
+  descriptors_csv: "data/processed/abo3_with_descriptors.csv"
+  descriptor_failures_csv: "data/processed/abo3_descriptor_failures.csv"
+  filtered_csv: "data/processed/abo3_filtered_perovskite_like.csv"
+  removed_by_filter_csv: "data/processed/abo3_removed_by_filter.csv"
+  validation_report: "reports/descriptor_validation_report.md"

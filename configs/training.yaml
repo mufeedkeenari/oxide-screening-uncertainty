@@ -1,0 +1,50 @@
+# Baseline model configuration.
+
+random_seed: 42
+
+targets:
+  - formation_energy_per_atom
+  - energy_above_hull
+  - band_gap
+
+split:
+  test_size: 0.2
+  validation_size: 0.2
+
+features:
+  composition_descriptors:
+    - A_oxidation_state
+    - B_oxidation_state
+    - r_A
+    - r_B
+    - r_O
+    - tolerance_factor
+    - octahedral_factor
+    - volume_per_atom
+
+  structural_descriptors:
+    - B_O_coordination_mean
+    - B_O_distance_mean
+    - B_O_distance_std
+    - B_O_B_angle_mean
+    - octahedral_tilt_proxy
+
+models:
+  random_forest:
+    n_estimators: 300
+    max_depth: null
+    random_state: 42
+
+  gradient_boosting:
+    n_estimators: 300
+    learning_rate: 0.05
+    max_depth: 3
+    random_state: 42
+
+  ridge:
+    alpha: 1.0
+
+outputs:
+  metrics_dir: "artifacts/metrics"
+  models_dir: "artifacts/models"
+  evaluation_report: "reports/model_evaluation_report.md"
